@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "windows_temp_files",
+      "platforms": ["windows"],
+      "category": "Arquivos temporários do Windows",
+      "path": "%TEMP%",
+      "patterns": ["*"],
+      "risk": "very_low",
+      "recreatable": true,
+      "automatic_selection": true,
+      "explanation": "São arquivos temporários criados por programas. Arquivos em uso serão ignorados e nenhum arquivo pessoal é selecionado por esta regra."
+    },
+    {
+      "id": "windows_thumbnails",
+      "platforms": ["windows"],
+      "category": "Miniaturas do Windows",
+      "path": "%LOCALAPPDATA%/Microsoft/Windows/Explorer",
+      "patterns": ["thumbcache_*.db"],
+      "risk": "very_low",
+      "recreatable": true,
+      "automatic_selection": true,
+      "explanation": "São prévias de imagens e vídeos que o Windows consegue recriar automaticamente. Suas fotos e vídeos não serão removidos."
+    },
+    {
+      "id": "windows_shader_cache",
+      "platforms": ["windows"],
+      "category": "Cache de shaders",
+      "path": "%LOCALAPPDATA%/D3DSCache",
+      "patterns": ["*"],
+      "risk": "medium",
+      "recreatable": true,
+      "automatic_selection": false,
+      "explanation": "Shaders compilados podem ser recriados, mas o jogo pode apresentar pequenas travadas na primeira execução depois da limpeza."
+    }
+  ]
+}
+

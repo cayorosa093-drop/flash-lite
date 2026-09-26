@@ -1,0 +1,2 @@
+"""Regras do backend Windows."""
+
